@@ -10,7 +10,7 @@ export default class Home extends Component {
       console.log("resultObject",resultObject)
       this.props.history.push({
         pathname: '/gifs',
-        state: { fbUser: resultObject.user }
+        state: { fbUser: resultObject }
       });
     } else {
       console.log('Facebook login error');

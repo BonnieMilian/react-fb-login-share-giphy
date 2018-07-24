@@ -10,6 +10,8 @@ export default class Gifs extends Component {
         gifText: '',
         gifsArray: []
     };
+    if(!(this.props.location && this.props.location.state && this.props.location.state.fbUser))
+      this.props.history.replace('/');
   }
 
   findGIF = (event) => {
@@ -31,9 +33,12 @@ export default class Gifs extends Component {
   }
 
   render() {
+    if(!(this.props.location && this.props.location.state && this.props.location.state.fbUser))
+      return null;
     return (
       <div className="App">
-        <h1>GIF Find & Share</h1>
+        <h1>{"Hi! "+this.props.location.state.fbUser.user.name}</h1>
+        <h2>GIF Find & Share</h2>
         <form onSubmit={this.findGIF}>
           <label>
             Find a GIF:
