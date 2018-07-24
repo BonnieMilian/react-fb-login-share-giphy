@@ -13,7 +13,7 @@ export default class FacebookLoginButton extends Component {
   initializeFacebookLogin = () => {
     console.log("FBObjectReady");
     this.FB = window.FB;
-    this.checkLoginStatus();
+    //this.checkLoginStatus();
   }
 
   checkLoginStatus = () => {
