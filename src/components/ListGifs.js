@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import '../App.css';
 
 export default class ListGifs extends Component {
+  constructor(props) {
+    super(props);
+    this.FB = window.FB;
+  }
+  
   shareFB = (gifURL) => {
     console.log("share this gif: " + gifURL);
+    this.FB.ui({
+      method: 'feed',
+      link: gifURL,
+      caption: 'Estoy en el taller de Facebook Developer Circles Guatemala, aprendiendo a integrar FB Login y Share, Mira este GIF',
+    }, function(response){});
   }
 
   renderGifs = () => {
