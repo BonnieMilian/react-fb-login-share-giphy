@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListGifs from '../components/ListGifs.js';
 import '../App.css';
+import { giphyAPIkey } from '../config/APIs.js'
 
 export default class Gifs extends Component {
   constructor(props) {
@@ -15,8 +16,7 @@ export default class Gifs extends Component {
     //https://developers.giphy.com/docs/
     //https://developers.giphy.com/explorer/
     //https://api.giphy.com/v1/gifs/search?api_key={your-api-key}&q=yes&limit=10&offset=0&rating=G&lang=en
-    var yourAPIkey = "YOUR-API-KEY";
-    fetch('https://api.giphy.com/v1/gifs/search?api_key='+yourAPIkey+"&q="+this.state.gifText+"&limit=5&offset=0&rating=G&lang=en")
+    fetch('https://api.giphy.com/v1/gifs/search?api_key='+giphyAPIkey+"&q="+this.state.gifText+"&limit=5&offset=0&rating=G&lang=en")
     .then((response) => {
       return response.json();
     })

@@ -1,0 +1,1 @@
+export const giphyAPIkey = "YOUR-API-KEY";
